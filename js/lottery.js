@@ -78,20 +78,20 @@ window.onload = function() {
     $paymentInn.innerText = payTxt;
 
 
+    // * 로또번호 랜덤 생성*
     $startBtn.addEventListener("click", () => {
         for(let i = 0; i < 5; i++) {
             ball[i].innerHTML = generate();
         }
-    })
+    }, false);
 
-    // * 로또번호 랜덤 생성*
     function generate() {
-        var answer = [];
+        let answer = [];
 
-        for (var i = 0; i < 6; i++){
-            var check = false;
+        for (let i = 0; i < 6; i++){
+            let check = false;
             while (check == false){
-                var randNum = Math.floor(Math.random() * 45) + 1;
+                let randNum = Math.floor(Math.random() * 45) + 1;
                 if (answer.includes(randNum) == false){
                     answer.push(randNum);
                     check = true;
